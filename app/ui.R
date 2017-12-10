@@ -50,15 +50,14 @@ shinyUI(navbarPage(
           ),
 
   tabPanel("Information",
-           h3(strong("Introduction")),
+           h3(strong("Summary")),
            br(),
            p("This App can be used as a simple tool to visualize and forecast
-              median rental prices in different neighborhoods of US cities",align="Justify"),
-           p("The forecast are obtained using the Holt-Winters methods available in the
-              R stats package.",align="Justify"),
+              median rental prices in different neighborhoods of US cities.", align="Justify"),
            p("The first graph shows median rental priceds for the last five years, and shows expected
               values for the next 12 months. In addition, we also displays the 90% confidence interval
-              of the forecats.",align="Justify"),
+              of the forecats. The forecasts are obtained using the Holt-Winters methods available in the
+              R stats package.",align="Justify"),
            p("The second plot displays the seasonality of the median rental prices in
               different neighborhoods of US cities",align="Justify"),
            

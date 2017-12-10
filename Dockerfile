@@ -21,7 +21,7 @@ RUN apt-get install -y -t unstable \
     r-cran-littler && \
     echo 'source("/etc/R/Rprofile.site")' >> /etc/littler.r && \
     R -e "install.packages(c('shiny', 'rmarkdown', 'shinythemes'), repos='https://cran.rstudio.com/')" && \
-    R -e "install.packages(c('readr', 'dplyr', 'dygraphs', 'bsts'))" && \
+    R -e "install.packages(c('readr', 'dplyr', 'dygraphs'))" && \
     cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/
 
 
