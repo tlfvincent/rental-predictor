@@ -123,9 +123,8 @@ server <- function(input, output) {
               panel.background = element_rect(fill = '#4e5d6c'),
               plot.background = element_rect(fill = "#4e5d6c"),
               panel.grid.major = element_blank(),
-              panel.grid.minor = element_blank(),
-              legend.background = element_rect(fill = "#4e5d6c"),
-              legend.box.background = element_rect(fill = "#4e5d6c"))
+              panel.grid.minor = element_blank()) +
+        theme(legend.position="none")
         }, height=1300)
 
 }
