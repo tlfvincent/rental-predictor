@@ -34,7 +34,7 @@ getTimeSeries <- function(rents, city, neighborhood) {
     return(dat)
 }
 
-getRentalDistributions <- function(city, neighborhood) {
+getRentalDistributions <- function(rents, city, neighborhood) {
 
       df <- rents %>%
            filter(City==city) %>%

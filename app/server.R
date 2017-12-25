@@ -1,6 +1,6 @@
 library(xts)
 #library(shiny)
-library(bsts)
+#library(bsts)
 library(readr)
 library(dplyr)
 library(reshape2)
@@ -104,7 +104,7 @@ server <- function(input, output) {
       )
 
       rents <- rawdata[[input$size]]
-      long <- getRentalDistributions(input$city, input$neighborhood)
+      long <- getRentalDistributions(rents, input$city, input$neighborhood)
 
       long
   })
