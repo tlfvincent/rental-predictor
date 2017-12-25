@@ -58,9 +58,9 @@ shinyUI(navbarPage(
            p("The first graph shows median rental priceds for the last five years, and shows expected
               values for the next 12 months. In addition, we also display the 90% confidence interval
               of the forecats. The forecasts are obtained using the Holt-Winters methods available in the
-              R stats package.",align="Justify"),
-           p("The second plot displays the seasonality of the median rental prices in
-              different neighborhoods of US cities",align="Justify"),
+              R stats package. The second plot displays the seasonality of the median rental prices in
+              different neighborhoods of US cities. Finally, the third plot shows the rank of the
+              neighborhood with respect to other neighborhoods in the same city.",align="Justify"),
            
            br(),
            h3(strong("Author")),
