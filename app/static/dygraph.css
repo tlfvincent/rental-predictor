@@ -1,3 +1,7 @@
 .dygraph-axis-label {
   color: #e5e5e5
 }
+
+.dygraph-legend {
+  background: transparent !important;
+}

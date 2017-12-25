@@ -4,10 +4,11 @@ library(dplyr)
 getCityNeighborhoods <- function(rents, city) {
     neighborhoods <- rents %>%
                         dplyr::filter(City==city) %>%
+                        distinct(RegionName) %>%
                         dplyr::select(RegionName) %>%
                         unlist(use.names = FALSE)
 
-    return(neighborhoods)
+    return(sort(neighborhoods))
 }
 
 getTimeSeries <- function(rents, city, neighborhood) {
@@ -33,3 +34,22 @@ getTimeSeries <- function(rents, city, neighborhood) {
     return(dat)
 }
 
+getRentalDistributions <- function(city, neighborhood) {
+
+      df <- rents %>%
+           filter(City==city) %>%
+           dplyr::select(contains('RegionName'), starts_with("20"))
+
+      long <- melt(df, id.vars = c("RegionName"))
+
+      prices <- long %>% group_by(RegionName) %>%
+               summarise(median = median(value, na.rm = TRUE)) %>%
+               arrange(desc(median)) %>%
+               dplyr::select(RegionName) %>%
+               unlist(use.names = TRUE) %>%
+               na.omit()
+
+      long$RegionName <- factor(long$RegionName, levels = rev(as.vector(prices)), ordered=TRUE)
+      long$class <- factor(ifelse(long$RegionName==neighborhood, "Highlighted", "Normal"))
+      return(long)
+}

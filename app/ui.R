@@ -39,7 +39,8 @@ shinyUI(navbarPage(
              mainPanel(fluidRow(
                
                column(12, h3(""), dygraphOutput("plot_fit")),
-               column(12, h3(""), dygraphOutput("plot_seasonality"))
+               column(12, h3(""), dygraphOutput("plot_seasonality")),
+               column(12, h3(""), plotOutput("plot_boxplots"))
                #column(12, h3("Data"), dataTableOutput("data_table"))
                #column(12, h3("Summary"), verbatimTextOutput("data_summary"))
                
@@ -55,7 +56,7 @@ shinyUI(navbarPage(
            p("This App can be used as a simple tool to visualize and forecast
               median rental prices in different neighborhoods of US cities.", align="Justify"),
            p("The first graph shows median rental priceds for the last five years, and shows expected
-              values for the next 12 months. In addition, we also displays the 90% confidence interval
+              values for the next 12 months. In addition, we also display the 90% confidence interval
               of the forecats. The forecasts are obtained using the Holt-Winters methods available in the
               R stats package.",align="Justify"),
            p("The second plot displays the seasonality of the median rental prices in
@@ -68,7 +69,7 @@ shinyUI(navbarPage(
            HTML('<Left><img src="https://www.digitalocean.com/assets/media/logos-badges/png/DO_Logo_icon_white-edbadfef.png" width="50" height="50"></Left>'),
            h5("Linkedin"),
            p(strong('If you are interested in the orginal code of this app, you can find it on the Github page linked below.')),
-           a(h5("Code Here"), href="https://github.com/tlfvincent/rental-predictor", target="_blank")
+           a(h5("Click here to see the code"), href="https://github.com/tlfvincent/rental-predictor", target="_blank")
   )
 
 ))
