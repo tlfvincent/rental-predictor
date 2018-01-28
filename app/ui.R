@@ -8,7 +8,10 @@ library(dygraphs)
 cities <- read_csv('./data/Neighborhood_MedianRentalPrice_1Bedroom.csv') %>%
           distinct(City) %>%
           select(City) %>%
-          unlist(use.names = FALSE)
+          unlist(use.names = FALSE) %>%
+          sort()
+
+
 
 shinyUI(navbarPage(
   theme = shinytheme("superhero"),

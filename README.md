@@ -22,3 +22,5 @@ docker run -p 4000:4000 -ti name_of_your_image
 ```
 
 The app should then be publicly visible at the following URL `http://your_machine_ip:4000/app/`
+
+The `your_machine_ip` value can be found by using the command `hostname -I`.
